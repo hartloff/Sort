@@ -63,9 +63,9 @@ public class Sort{
 
         startTime = System.currentTimeMillis();
 
-        selectionSort(bigData);
-//        bigData = mergeSort(bigData);
-//        Collections.sort(bigData);
+//        selectionSort(bigData);
+//      Collections.sort(bigData);
+        bigData = mergeSort(bigData);
 
         endTime = System.currentTimeMillis();
         elapsedTime = endTime - startTime;
@@ -101,8 +101,11 @@ public class Sort{
                 right.add(numbers.get(i));
             }
         }
+        
+        ArrayList<Integer> sortedLeft = mergeSort(left);
+        ArrayList<Integer> sortedRight = mergeSort(right);
 
-        return merge(mergeSort(left), mergeSort(right));
+        return merge(sortedLeft, sortedRight);
     }
 
 
